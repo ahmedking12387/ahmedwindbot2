@@ -3,8 +3,6 @@ const client = new Discord.Client();
 const prefix = '+'
 
 client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-client.user.setGame(`Nothing`,"http://twitch.tv/A_K")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -103,7 +101,7 @@ setInterval(function(){})
 
 
 client.on('message', function(message) {
-	const myID = "302354407864139777";
+	const myID = "279194403564814336";
     let args = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(prefix + "setname")) {
 		        if(message.author.id !== myID) return;

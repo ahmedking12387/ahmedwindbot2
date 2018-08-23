@@ -39,14 +39,14 @@ client.user.setGame(`Nothing`,"http://twitch.tv/A_K")
 	
 	client.on('message', msg => {
     if (msg.content === 'الوان') {
-      if (msg.channel.id !== "478388106140057610") return;
+      if (msg.channel.id !== "482037797524471808") return;
       msg.channel.send({file : "https://cdn.discordapp.com/attachments/472743324084731914/478685035730305036/color.png"})
     }
   });
 client.on('message', message => {
     let args = message.content.split(' ').slice(1);
 if(message.content.split(' ')[0] == 'لون'){
-if (message.channel.id !== "478388106140057610") return;
+if (message.channel.id !== "482037797524471808") return;
      const embedd = new Discord.RichEmbed()
 .setFooter('Requested by '+message.author.username, message.author.avatarURL)
 .setDescription(`**There's No Color With This Number ** ❌ `)
@@ -93,7 +93,7 @@ client.on('message', function(message) {
     let args = message.content.split(" ").slice(1).join(" ");
     if(message.content.startsWith(prefix + "setname")) {
 		        if(message.author.id !== myID) return;
-            if(!args) return message.reply('اكتب الحالة اللي تريدها.');
+            if(!args) return message.reply('اكتب الاسم الذي تريده.');
         client.user.setUsername(args);
         message.channel.send(':white_check_mark: Done!').then(msg => {
            msg.delete(5000);
@@ -135,7 +135,7 @@ client.on('message', function(message) {
 				        if(message.author.id !== myID) return;
         client.user.setAvatar(args);
         message.channel.send(':white_check_mark: Done!').then(msg => {
-                if(!args) return message.reply('اكتب الحالة اللي تريدها.');
+                if(!args) return message.reply('اكتب رابط الصوره التي تريدها.');
            msg.delete(5000);
           message.delete(5000);
         });

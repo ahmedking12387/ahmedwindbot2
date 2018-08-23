@@ -52,7 +52,7 @@ message.channel.send({embed:embed});
 	client.on('message', msg => {
     if (msg.content === 'الوان') {
       if (msg.channel.id !== "482037797524471808") return;
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/472743324084731914/478685035730305036/color.png"})
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476877117452320778/482113328508960769/color.png"})
     }
   });
 client.on('message', message => {

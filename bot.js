@@ -51,14 +51,14 @@ message.channel.send({embed:embed});
 	
 	client.on('message', msg => {
     if (msg.content === 'الوان') {
-      if (msg.channel.id !== "482037797524471808") return;
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476877117452320778/482113328508960769/color.png"})
+      if (msg.channel.id !== "476877117452320778") return;
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476877117452320778/482114030052442142/color.png"})
     }
   });
 client.on('message', message => {
     let args = message.content.split(' ').slice(1);
 if(message.content.split(' ')[0] == 'لون'){
-if (message.channel.id !== "482037797524471808") return;
+if (message.channel.id !== "476877117452320778") return;
      const embedd = new Discord.RichEmbed()
 .setFooter('Requested by '+message.author.username, message.author.avatarURL)
 .setDescription(`**لايوجد لون بهذا الرقم** ❌ `)

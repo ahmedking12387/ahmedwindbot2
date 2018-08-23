@@ -248,7 +248,7 @@ var guilds = {};
 client.on('guildBanAdd', function(guild) {
             const rebellog = client.channels.find("name", "log"),
             Onumber = 3,
-  Otime = 10000
+  Otime = 60000
 guild.fetchAuditLogs({
     type: 22
 }).then(audit => {
@@ -287,7 +287,7 @@ console.log(error)
   const rebellog = client.channels.find("name", "log"),
   Oguild = channel.guild,
   Onumber = 3,
-  Otime = 10000;
+  Otime = 60000;
   const audit = await channel.guild.fetchAuditLogs({limit: 1});
   const channelcreate = audit.entries.first().executor;
   console.log(` A ${channel.type} Channel called ${channel.name} was Created By ${channelcreate.tag}`);
@@ -314,7 +314,7 @@ let channelr = {};
   const rebellog = client.channels.find("name", "log"),
   Oguild = channel.guild,
   Onumber = 3,
-  Otime = 10000;
+  Otime = 60000;
   const audit = await channel.guild.fetchAuditLogs({limit: 1});
   const channelremover = audit.entries.first().executor;
   console.log(` A ${channel.type} Channel called ${channel.name} was deleted By ${channelremover.tag}`);
@@ -340,7 +340,40 @@ channel.guild.owner.send(`<@!${channelremover.id}>
 
 
 
-
+client.on('message', message => {
+    if (message.author.id === client.user.id) return;
+    if (message.guild) {
+   let embed = new Discord.RichEmbed()
+    let args = message.content.split(' ').slice(1).join(' ');
+if(message.content.split(' ')[0] == prefix + 'bc') {
+    if (!args[1]) {
+message.channel.send("**+bc <message>**");
+return;
+}
+        message.guild.members.forEach(m => {
+   if(!message.member.hasPermission('ADMINISTRATOR')) return;
+            var bc = new Discord.RichEmbed()
+            .setAuthor(message.author.username, message.author.avatarURL)
+            .addField('** الـسيرفر**', `${message.guild.name}`,true)
+            .addField(' **الـمرسل **', `${message.author.username}#${message.author.discriminator}`,true)
+            .addField(' **الرسالة** ', args)
+            .setThumbnail(message.guild.iconURL)
+            .setColor('RANDOM')
+            m.send(`${m}`,{embed: bc});
+        });
+        const AziRo = new Discord.RichEmbed()
+        .setAuthor(message.author.username, message.author.avatarURL)
+        .setTitle('✔️ |تم ارسال الراساله ')
+        .addBlankField(true)
+        .addField('👥 | عدد الاعضاء المرسل لهم ', message.guild.memberCount , true)
+        .addField('📋| الرسالة ', args)
+        .setColor('RANDOM')
+        message.channel.sendEmbed(AziRo);
+    }
+    } else {
+        return;
+    }
+});
 
 
 

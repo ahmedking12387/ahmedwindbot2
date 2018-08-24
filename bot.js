@@ -356,8 +356,7 @@ client.on('guildMemberAdd',async member => {
   const Canvas = require('canvas');
   const jimp = require('jimp');
    msg.channel.send({file : "https://cdn.discordapp.com/attachments/338569764379033601/482404152249679882/welcome_4.png"})
-    }
-  });
+    
         let Image = Canvas.Image,
             canvas = new Canvas(800, 300),
             ctx = canvas.getContext('2d');

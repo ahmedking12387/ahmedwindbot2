@@ -234,10 +234,10 @@ const prefix = '+'
   let args = message.content.split(" ").slice(1);
 	
   if (command == "mute") {
-  let rank = message.guild.member(message.author).roles.find('name', 'clear');
-  if (!rank) return message.reply('انت لا تمتلك الرتبه المخصصه لهذا الامر')
-      message.delete();
-
+  let rank = message.guild.member(message.author).roles.find('name', 'mute');
+  if (!rank) return message.reply('انت لا تمتلك الرتبة المخصص لهذا الامر')
+          message.delete(5000);
+	  
            if(!message.channel.guild) return message.reply('** This command only for servers**');
     let messageArray = message.content.split(' ');
     let muteRole = message.guild.roles.get('482449634552315916') || message.guild.roles.find('name', 'Muted');
@@ -246,11 +246,11 @@ const prefix = '+'
     let muteDuration = messageArray[3];
        if(!muteRole) return message.guild.createRole({name: 'Muted'}).then(message.guild.channels.forEach(chan => chan.overwritePermissions(muteRole, {SEND_MESSAGES:false,ADD_REACTIONS:false})));
        if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.channel.send('ℹ **Error:** ``خصائص مفقودة مني``');
-       if(!muteMember) return message.channel.send('ℹ **Error:** ``منشن شخص``');
-       if(!muteReason) return message.channel.send('ℹ **Error:** ``حدد سباّ``');
+       if(!muteMember) return message.channel.send('ℹ **Error:** **حدد شخص**');
+       if(!muteReason) return message.channel.send('ℹ **Error:** **اكتب سبب ل اسكت هذا العضو**`');
        if(!muteDuration) return message.channel.send('ℹ **Error:** ``حدد وقت زمني``');
-       if(!muteDuration.match(/[1-7][s,m,h,d,w]/g)) return message.channel.send('ℹ **Error:** ``حدد وقت زمني صحيح``');
-       message.channel.send(`:white_check_mark: **تم اعطاء العضو ميوت : ${muteMember}**`);
+       if(!muteDuration.match(/[1-24][s,m,h,d,w]/g)) return message.channel.send('ℹ **Error:** ``الرجاء كتاتب وقت زمني بعد السبب``');
+       message.channel.send(`:white_check_mark: **تم اسكات العضو بنجاح : ${muteMember}**`);
        muteMember.addRole(muteRole);
        muteMember.setMute(true)
        .then(() => { setTimeout(() => {

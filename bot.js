@@ -355,8 +355,8 @@ channel.guild.owner.send(`<@!${channelremover.id}>
 client.on('guildMemberAdd',async member => {
   const Canvas = require('canvas');
   const jimp = require('jimp');
-   msg.channel.send({file : "https://cdn.discordapp.com/attachments/338569764379033601/482404152249679882/welcome_4.png"})
-    
+    const w = ['./welcome_4.png'];
+ 
         let Image = Canvas.Image,
             canvas = new Canvas(800, 300),
             ctx = canvas.getContext('2d');
@@ -405,7 +405,7 @@ client.on('guildMemberAdd',async member => {
           ctx.clip();
           ctx.drawImage(ava, 36, 21, 260, 260);
            
-          const c = hero.channels.get("475999824525656064");
+          const c = hero.channels.get("476877117452320778");
           c.sendFile(canvas.toBuffer());
  
 });

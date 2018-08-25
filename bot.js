@@ -357,15 +357,15 @@ channel.guild.owner.send(`<@!${channelremover.id}>
 
 
 
-if(!Discord) var Discord = require('discord.js');
-if(!client) var client = new Discord.Client();
-if(!prefix) var prefix = "+" ; // البرفكس 
+
+
 
 var stopReacord = true;
 var reactionRoles = [];
 var definedReactionRole = null;
 
 client.on("message", async message => {
+	if(!prefix) var prefix = "+" ; // البرفكس 
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
     if(message.author.bot) return;

@@ -36,9 +36,22 @@ client.on('ready', () => {
 	client.on('message', msg => {
     if (msg.content === 'الوان') {
       if (msg.channel.id !== "476877117452320778") return;
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/476877117452320778/482114030052442142/color.png"})
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/482123244602654721/483358365947265046/color.png"})
     }
   });
+	client.on('message', msg => {
+    if (msg.content === 'الون') {
+      if (msg.channel.id !== "476877117452320778") return;
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/482123244602654721/483358365947265046/color.png"})
+    }
+  });
+	client.on('message', msg => {
+    if (msg.content === 'colors') {
+      if (msg.channel.id !== "476877117452320778") return;
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/482123244602654721/483358365947265046/color.png"})
+    }
+  });
+
 client.on('message', message => {
     let args = message.content.split(' ').slice(1);
 if(message.content.split(' ')[0] == 'لون'){

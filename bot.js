@@ -280,7 +280,7 @@ var guilds = {};
 client.on('guildBanAdd', function(guild) {
             const rebellog = client.channels.find("name", "log"),
             Onumber = 3,
-  Otime = 60000
+  Otime = 1000;
 guild.fetchAuditLogs({
     type: 22
 }).then(audit => {
@@ -319,7 +319,7 @@ console.log(error)
   const rebellog = client.channels.find("name", "log"),
   Oguild = channel.guild,
   Onumber = 3,
-  Otime = 60000;
+  Otime = 1000;
   const audit = await channel.guild.fetchAuditLogs({limit: 1});
   const channelcreate = audit.entries.first().executor;
   console.log(` A ${channel.type} Channel called ${channel.name} was Created By ${channelcreate.tag}`);
@@ -346,7 +346,7 @@ let channelr = {};
   const rebellog = client.channels.find("name", "log"),
   Oguild = channel.guild,
   Onumber = 3,
-  Otime = 60000;
+  Otime = 1000;
   const audit = await channel.guild.fetchAuditLogs({limit: 1});
   const channelremover = audit.entries.first().executor;
   console.log(` A ${channel.type} Channel called ${channel.name} was deleted By ${channelremover.tag}`);

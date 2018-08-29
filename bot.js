@@ -236,7 +236,7 @@ client.user.setGame(args , '');
 
 
 client.on('message',function(message) {
-const prefix = '+'
+const prefix = 'ا'
 	if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
 
@@ -246,9 +246,9 @@ const prefix = '+'
 
   let args = message.content.split(" ").slice(1);
 	
-  if (command == "mute") {
+  if (command == "سكت") {
   let rank = message.guild.member(message.author).roles.find('name', 'mute');
-  if (!rank) return message.reply('انت لا تمتلك الرتبة المخصص لهذا الامر')
+  if (!rank) return message.reply('انت لا تمتلك الرتبة المخصصه لهذا الامر')
           message.delete(5000);
 	  
            if(!message.channel.guild) return message.reply('** This command only for servers**');

@@ -264,19 +264,19 @@ message.channel.send({embed : muteembed});
 var muteembeddm = new Discord.RichEmbed()
 .setAuthor(`Muted!`, user.displayAvatarURL)
 .setDescription(`
-${user} انت معاقب بميوت كتابي بسبب مخالفة القوانين 
+${user} انت معاقب بميوت  بسبب مخالفة القوانين 
 
  ${message.author.tag} تمت معاقبتك بواسطة
 
 [ ${reason} ] : السبب
 
-اذا كانت العقوبة عن طريق الخطأ تكلم مع المسؤلين 
+اذا كانت العقوبة عن طريق الخطاء تحدث مع ادارة السيرفر
 `)
-.setFooter(`في سيرفر : ${message.guild.name}`)
+.setFooter(`**في سيرفر Wind**`)
 .setColor("#000000")
  user.send( muteembeddm);
 }
-if (command == "تكلم") {
+if (command == "unmute") {
 if (!message.channel.guild) return;
 if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply("انتا لا تملك صلاحيات").then(msg => msg.delete(5000));
 if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
@@ -287,7 +287,7 @@ if (message.mentions.users.size < 1) return message.reply('** يجب عليك ا
 let reason = message.content.split(" ").slice(2).join(" ");
 message.guild.member(user).removeRole(muteRole);
 const unmuteembed = new Discord.RichEmbed()
-.setColor("#000000")
+.setColor("RANDOM")
 .setAuthor(`UnMute!`, user.displayAvatarURL)
 .setThumbnail(user.displayAvatarURL)
 .addField("**:busts_in_silhouette:  المستخدم**",  '**[ ' + `${user.tag}` + ' ]**',true)
@@ -296,9 +296,9 @@ const unmuteembed = new Discord.RichEmbed()
 .addField("User", user, true)  
 message.channel.send({embed : unmuteembed}).then(msg => msg.delete(5000));
 var unmuteembeddm = new Discord.RichEmbed()
-.setDescription(`تم فك الميوت عنك ${user}`)
+.setDescription(`** Wind تم فك الميوت عنك في سيرفر** ${user}`)
 .setAuthor(`UnMute!`, user.displayAvatarURL)
-.setColor("#000000")
+.setColor("#000000 ")
   user.send( unmuteembeddm);
 }
 });

@@ -281,7 +281,6 @@ ${user} انت معاقب بميوت كتابي بسبب مخالفة القوا
  user.send( muteembeddm);
 }
 if (message.author.boss) return;
-const prefix = 'ت'
 	if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
   let command = message.content.split(" ")[0];

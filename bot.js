@@ -236,18 +236,16 @@ client.user.setGame(args , '');
 
 
 client.on('message', message => {   
-const prefix = 'ا'
-	if (message.author.x5bz) return;
-  if (!message.content.startsWith(prefix)) return;
-  command = command.slice(prefix.length);
-  let args = message.content.split(" ").slice(1);	
-  if (command == "سكت") {
-  let rank = message.guild.member(message.author).roles.find('name', 'mute');
-  if (!rank) return message.reply('انت لا تمتلك الرتبة المخصصه لهذا الامر')
-          message.delete(5000);
-	  
-           if(!message.channel.guild) return message.reply('** This command only for servers**');
-
+if (message.author.boss) return;
+var prefix = "ا";
+if (!message.content.startsWith(prefix)) return;
+let command = message.content.split(" ")[0];
+command = command.slice(prefix.length);
+let args = message.content.split(" ").slice(1);
+if (command == "سكت") {
+if (!message.channel.guild) return;
+if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply("انت لا تملك صلاحيات !! ").then(msg => msg.delete(5000));
+if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
 let user = message.mentions.users.first();
 let muteRole = message.guild.roles.find("name", "Muted");
 if (!muteRole) return message.reply("** لا يوجد رتبة الميوت 'Muted' **").then(msg => {msg.delete(5000)});
@@ -278,17 +276,8 @@ ${user} انت معاقب بميوت كتابي بسبب مخالفة القوا
 .setColor("RANDOM")
  user.send( muteembeddm);
 }
-	if (message.author.x5bz) return;
-  if (!message.content.startsWith(prefix)) return;
-  command = command.slice(prefix.length);
-  let args = message.content.split(" ").slice(1);	
-  if (command == "كلم") {
-  let rank = message.guild.member(message.author).roles.find('name', 'unmute');
-  if (!rank) return message.reply('انت لا تمتلك الرتبة المخصصه لهذا الامر')
-          message.delete(5000);
-	  
-           if(!message.channel.guild) return message.reply('** This command only for servers**');
-
+var prefix = "ت";
+if (command == "كلم") {
 if (!message.channel.guild) return;
 if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.reply("انتا لا تملك صلاحيات").then(msg => msg.delete(5000));
 if(!message.guild.member(client.user).hasPermission("MANAGE_MESSAGES")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;

@@ -236,7 +236,6 @@ client.user.setGame(args , '');
 
 
 client.on('message', message => {   
-if (message.author.boss) return;
 const prefix = 'ا'
 	if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
@@ -280,7 +279,6 @@ ${user} انت معاقب بميوت كتابي بسبب مخالفة القوا
 .setColor("RANDOM")
  user.send( muteembeddm);
 }
-if (message.author.boss) return;
 	if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
   let command = message.content.split(" ")[0];

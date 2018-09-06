@@ -239,7 +239,6 @@ client.on('message', message => {
 const prefix = 'ا'
 	if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
-  let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
   let args = message.content.split(" ").slice(1);	
   if (command == "سكت") {
@@ -281,7 +280,6 @@ ${user} انت معاقب بميوت كتابي بسبب مخالفة القوا
 }
 	if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
-  let command = message.content.split(" ")[0];
   command = command.slice(prefix.length);
   let args = message.content.split(" ").slice(1);	
   if (command == "كلم") {

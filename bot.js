@@ -288,7 +288,7 @@ let args = message.content.split(" ").slice(1);
 if (command == "كلم") {
 if (!message.channel.guild) return;
 if (!message.channel.guild) return;
-if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("انتا لا تملك صلاحيات").then(msg => msg.delete(5000));
+if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("انت لا تملك صلاحيات").then(msg => msg.delete(5000));
 if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
 let user = message.mentions.users.first();
 let muteRole = message.guild.roles.find("name", "Muted");

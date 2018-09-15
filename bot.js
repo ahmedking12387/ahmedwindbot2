@@ -244,8 +244,8 @@ command = command.slice(prefix.length);
 let args = message.content.split(" ").slice(1);
 if (command == "سكت") {
 if (!message.channel.guild) return;
-if(!message.guild.member(message.author).hasPermission("MUTE_MESSAGES")) return message.reply("انت لا تملك صلاحيات !! ").then(msg => msg.delete(5000));
-if(!message.guild.member(client.user).hasPermission("MUTE_MESSAGES")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
+if(!message.guild.member(message.author).hasPermission("MUTE_MEMBERS")) return message.reply("انت لا تملك صلاحيات !! ").then(msg => msg.delete(5000));
+if(!message.guild.member(client.user).hasPermission("MUTE_MEMBERS")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
 let user = message.mentions.users.first();
 let muteRole = message.guild.roles.find("name", "Muted");
 if (!muteRole) return message.reply("** لا يوجد رتبة الميوت 'Muted' **").then(msg => {msg.delete(5000)});
@@ -276,10 +276,18 @@ ${user} انت معاقب بميوت  بسبب مخالفة القوانين
 .setColor("#000000")
  user.send( muteembeddm);
 }
-if (command == "unmute") {
+client.on('message', message => {   
+if (message.author.boss) return;
+var prefix = "ت";
+if (!message.content.startsWith(prefix)) return;
+let command = message.content.split(" ")[0];
+command = command.slice(prefix.length);
+let args = message.content.split(" ").slice(1);
+if (command == "كلم") {
 if (!message.channel.guild) return;
-if(!message.guild.member(message.author).hasPermission("BAN_MESSAGES")) return message.reply("انتا لا تملك صلاحيات").then(msg => msg.delete(5000));
-if(!message.guild.member(client.user).hasPermission("BAN_MESSAGES")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
+if (!message.channel.guild) return;
+if(!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("انتا لا تملك صلاحيات").then(msg => msg.delete(5000));
+if(!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) return message.reply("البوت لايملك صلاحيات ").then(msg => msg.delete(5000));;
 let user = message.mentions.users.first();
 let muteRole = message.guild.roles.find("name", "Muted");
 if (!muteRole) return message.reply("** لا يوجد رتبة الميوت 'Muted' **").then(msg => {msg.delete(5000)});

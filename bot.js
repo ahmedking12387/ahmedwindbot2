@@ -276,6 +276,8 @@ ${user} انت معاقب بميوت  بسبب مخالفة القوانين
 .setColor("#000000")
  user.send( muteembeddm);
 }
+});
+
 client.on('message', message => {   
 if (message.author.boss) return;
 var prefix = "ت";
@@ -307,7 +309,7 @@ var unmuteembeddm = new Discord.RichEmbed()
 .setDescription(`** Wind تم فك الميوت عنك في سيرفر** ${user}`)
 .setAuthor(`UnMute!`, user.displayAvatarURL)
 .setColor("#000000 ")
-  user.send( unmuteembeddm);
+  user.send(unmuteembeddm);
 }
 });
 

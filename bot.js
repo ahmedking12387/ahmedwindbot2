@@ -36,19 +36,19 @@ client.on('ready', () => {
 	client.on('message', msg => {
     if (msg.content === 'الوان') {
       if (msg.channel.id !== "476877117452320778") return;
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/482123244602654721/483358365947265046/color.png"})
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/338569764379033601/490479045914394640/color.png"})
     }
   });
 	client.on('message', msg => {
     if (msg.content === 'الون') {
       if (msg.channel.id !== "476877117452320778") return;
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/482123244602654721/483358365947265046/color.png"})
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/338569764379033601/490479045914394640/color.png"})
     }
   });
 	client.on('message', msg => {
     if (msg.content === 'colors') {
       if (msg.channel.id !== "476877117452320778") return;
-      msg.channel.send({file : "https://cdn.discordapp.com/attachments/482123244602654721/483358365947265046/color.png"})
+      msg.channel.send({file : "https://cdn.discordapp.com/attachments/338569764379033601/490479045914394640/color.png"})
     }
   });
 
@@ -317,7 +317,7 @@ var unmuteembeddm = new Discord.RichEmbed()
 
 var guilds = {};
 client.on('guildBanAdd', function(guild) {
-            const rebellog = client.channels.find("name", "log"),
+            const rebellog = client.channels.find("name", "log-2"),
             Onumber = 3,
   Otime = 60000;
 guild.fetchAuditLogs({
@@ -340,9 +340,9 @@ console.log(error)
 try {
 guild.members.get(banner).ban();
   rebellog.send(`<@!${banner.id}>
-حآول العبث بالسيرفر @everyone`);
+حآول العبث بالسيرفر (حظر اعضاء )ء @everyone`);
 guild.owner.send(`<@!${banner.id}>
-حآول العبث بالسيرفر ${guild.name}`)
+حآول العبث بالسيرفر (حظر اعضاء )ء ${guild.name}`)
     setTimeout(() => {
  guilds[guild.id].bans = 0;
   },Otime)
@@ -371,9 +371,9 @@ console.log(error)
  if(channelc[channelcreate.id].created >= Onumber ) {
     Oguild.members.get(channelcreate.id).kick();
 rebellog.send(`<@!${channelcreate.id}>
-حآول العبث بالسيرفر @everyone`);
+حآول العبث بالسيرفر (صنع قناة )ء @everyone`);
 channel.guild.owner.send(`<@!${channelcreate.id}>
-حآول العبث بالسيرفر ${channel.guild.name}`)
+حآول العبث بالسيرفر (صنع قناة )ء ${channel.guild.name}`)
 }
   setTimeout(() => {
  channelc[channelcreate.id].created = 0;
@@ -382,7 +382,7 @@ channel.guild.owner.send(`<@!${channelcreate.id}>
 
 let channelr = {};
   client.on('channelDelete', async (channel) => {
-  const rebellog = client.channels.find("name", "log"),
+  const rebellog = client.channels.find("name", "log-2"),
   Oguild = channel.guild,
   Onumber = 3,
   Otime = 60000;
@@ -398,9 +398,9 @@ let channelr = {};
  if(channelr[channelremover.id].deleted >= Onumber ) {
   Oguild.guild.member(channelremover).kick();
 rebellog.send(`<@!${channelremover.id}>
-حآول العبث بالسيرفر @everyone`);
+حآول العبث بالسيرفر (حذف رومات )ء @everyone`);
 channel.guild.owner.send(`<@!${channelremover.id}>
-حآول العبث بالسيرفر ${channel.guild.name}`)
+حآول العبث بالسيرفر (حذف رومات )ء ${channel.guild.name}`)
 }
   setTimeout(() => {
  channelr[channelremover.id].deleted = 0;

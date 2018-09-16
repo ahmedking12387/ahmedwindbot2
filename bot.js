@@ -30,12 +30,9 @@ client.on('ready', () => {
 
 
 
-
 client.on('ready',async () => {
   client.channels.find(ch => ch.id === "490468685195116556" && ch.type === 'voice').join();
 });
-
-
 	
 	client.on('message', msg => {
     if (msg.content === 'الوان') {

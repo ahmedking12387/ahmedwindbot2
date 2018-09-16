@@ -411,6 +411,7 @@ channel.guild.owner.send(`<@!${channelremover.id}>
 
 
 
+
 client.on('message', function(message) {
     if (message.channel.type === "dm") {
         if (message.author.id === client.user.id) return;
@@ -425,8 +426,5 @@ client.on('message', function(message) {
     }
 });
   
-
-
-
 
 client.login(process.env.BOT_TOKEN);
